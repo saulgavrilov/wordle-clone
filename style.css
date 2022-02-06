@@ -1,0 +1,128 @@
+:root {
+  --dark-color: #10121b;
+  --gray-color: #2e344e;
+  --gray-color-1: #2c3e50;
+  --green-color: #27ae60;
+  --yellow-color: #f1c40f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background: var(--dark-color);
+}
+
+.game-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.title-container {
+  text-align: center;
+  width: 510px;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.title-container h1 {
+  letter-spacing: 1.5rem;
+}
+
+.message-container {
+  height: 30px;
+}
+
+.message-container p {
+  background: var(--gray-color);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+}
+
+.tile-container {
+  width: 330px;
+  margin-bottom: 2rem;
+}
+
+.tile-container div {
+  display: flex;
+}
+
+.tile-container .tile {
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--gray-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  margin: 2px;
+}
+
+.keyboard-container {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard-container button {
+  width: 43px;
+  height: 58px;
+  border-radius: 4px;
+  border: none;
+  background: var(--gray-color);
+  color: #ffffff;
+  margin: 4px;
+}
+
+.keyboard-container button:nth-child(20),
+.keyboard-container button:nth-child(28) {
+  width: 68px;
+}
+
+.keyboard-container button:nth-child(11) {
+  margin-left: 30px;
+}
+
+.tile.flip {
+  animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Overlays */
+.gray-overlay {
+  background: var(--gray-color-1) !important;
+  border: none !important;
+}
+
+.yellow-overlay {
+  background: var(--yellow-color) !important;
+  border: none !important;
+}
+
+.green-overlay {
+  background: var(--green-color) !important;
+  border: none !important;
+}
